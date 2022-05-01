@@ -1,0 +1,69 @@
+#:kivy 2.0.0
+
+
+
+
+<Container>
+
+
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'wp.jpg'
+            size: root.width, root.height
+            pos: self.pos
+
+    rows: 3
+
+    padding: 50
+
+    dollar : dollar
+    euro : euro
+
+    GridLayout:
+        cols:2
+
+
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+
+                font_size : "25sp"
+                text : "dollar"
+
+            Label:
+
+                font_size : "25sp"
+                text : "euro"
+
+
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                id: dollar
+                font_size : "25sp"
+                text : "0"
+
+            Label:
+                id: euro
+                font_size : "25sp"
+                text : "0"
+
+    Button:
+        opacity: 0.5
+        color: 1,1,1,1
+        
+        font_size : "35sp"
+        background_color:"black"
+        text: "Спарсить!"
+
+        on_release:
+            root.scrap_text()
+
+
+
+
+
+        
+
